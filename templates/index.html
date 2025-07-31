@@ -1,70 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>🤝 Comunicación sin Barreras</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Estación Inclusiva - Comunicación sin Barreras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      background-color: #000;
+      background-color: #111;
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0;
       padding: 20px;
     }
 
     video {
       width: 40%;
-      border: 4px solid white;
+      border: 3px solid white;
+      margin-bottom: 20px;
     }
 
     textarea, input {
       width: 90%;
-      margin: 10px 0;
       padding: 10px;
+      margin: 10px 0;
       font-size: 16px;
     }
 
     button {
       padding: 10px 20px;
+      margin: 10px;
       font-size: 16px;
-      background-color: #4CAF50;
+      background-color: #2e8b57;
       color: white;
       border: none;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #3e8e41;
+      background-color: #216644;
     }
 
     #formulario {
       margin-top: 20px;
-      display: none;
     }
-
   </style>
 </head>
 <body>
   <h1>🤝 Comunicación sin Barreras</h1>
 
+  <!-- 🎥 Cámara activa -->
   <video id="video" autoplay></video>
 
-  <p>Puedes revisar o corregir el texto dictado:</p>
-  <label for="mensajeEditable">Mensaje dictado (editable):</label><br>
-  <textarea id="mensajeEditable" rows="6" placeholder="Esperando dictado..."></textarea><br>
+  <p>Presiona el botón para comenzar a grabar tu mensaje por voz. Puedes revisarlo, corregirlo y enviarlo a la alcaldía.</p>
 
-  <button onclick="mostrarFormulario()">📨 Enviar mensaje</button>
+  <button onclick="iniciarGrabacion()">🎤 Comenzar Grabación</button>
+  <button onclick="detenerGrabacion()">🛑 Detener Grabación</button>
+
+  <textarea id="mensajeEditable" rows="6" placeholder="Tu mensaje aparecerá aquí..."></textarea>
 
   <div id="formulario">
     <h3>Información de contacto</h3>
     <input type="text" id="nombre" placeholder="Nombre completo"><br>
-    <input type="text" id="telefono" placeholder="Número de contacto"><br>
+    <input type="text" id="telefono" placeholder="Teléfono"><br>
     <input type="email" id="email" placeholder="Correo electrónico"><br>
-    <button onclick="enviarFormulario()">✅ Confirmar y Enviar</button>
+    <button onclick="enviarFormulario()">✅ Enviar mensaje</button>
   </div>
 
   <script src="/static/script.js"></script>
+
+  <script>
+    // Activar la cámara al cargar
+    const video = document.getElementById("video");
+    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+      .then(stream => {
+        video.srcObject = stream;
+      })
+      .catch(err => {
+        console.warn("No se pudo acceder a la cámara:", err);
+      });
+
+    // Mensaje inicial por voz
+    window.onload = () => {
+      setTimeout(() => {
+        const synth = window.speechSynthesis;
+        const bienvenida = new SpeechSynthesisUtterance("Bienvenido. Presione el botón para grabar su mensaje.");
+        bienvenida.lang = "es-CO";
+        synth.speak(bienvenida);
+      }, 1000);
+    };
+  </script>
 </body>
 </html>
