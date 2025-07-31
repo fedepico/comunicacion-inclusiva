@@ -1,7 +1,7 @@
-Flask
-Flask-CORS
+flask
+flask-cors
 SpeechRecognition
 pyttsx3
-pyaudio
-numpy
-tensorflow
+requests
+pydub
+email-validator
