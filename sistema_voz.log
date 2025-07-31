@@ -1,0 +1,158 @@
+2025-07-25 23:35:06,261 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-07-25 23:35:06,262 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:35:06,264 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:35:06,759 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:35:06,836 - werkzeug - INFO -  * Debugger PIN: 406-842-352
+2025-07-25 23:40:34,705 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-07-25 23:40:36,331 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:40:36,333 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:40:36,760 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:40:36,763 - werkzeug - INFO -  * Debugger PIN: 406-842-352
+2025-07-25 23:45:41,303 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-07-25 23:45:41,303 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:45:41,305 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:45:41,730 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:45:41,734 - werkzeug - INFO -  * Debugger PIN: 406-842-352
+2025-07-26 00:24:12,770 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-07-26 00:24:12,832 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-26 00:24:12,838 - werkzeug - INFO -  * Restarting with stat
+2025-07-26 00:24:13,348 - werkzeug - WARNING -  * Debugger is active!
+2025-07-26 00:24:13,352 - werkzeug - INFO -  * Debugger PIN: 406-842-352
+2025-07-26 00:25:00,885 - __main__ - INFO -  Iniciando servidor Flask
+2025-07-26 00:25:00,917 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.8:5000
+2025-07-26 00:25:00,917 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-26 00:25:00,918 - werkzeug - INFO -  * Restarting with stat
+2025-07-26 00:25:01,415 - __main__ - INFO -  Iniciando servidor Flask
+2025-07-26 00:25:01,441 - werkzeug - WARNING -  * Debugger is active!
+2025-07-26 00:25:01,447 - werkzeug - INFO -  * Debugger PIN: 406-842-352
+2025-07-26 00:25:36,362 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:25:36] "GET / HTTP/1.1" 200 -
+2025-07-26 00:25:55,970 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:25:55] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:13,362 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:13] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:13,685 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Recibido: "ahora puedes hablar...
+2025-07-26 00:26:13,774 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Python312\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-07-26 00:26:13,775 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Python312\Lib\site-packages\comtypes\gen'
+2025-07-26 00:26:14,866 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:14] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:14,907 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-26 00:26:16,461 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:16] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:16,793 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "voy a habl...
+2025-07-26 00:26:17,032 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:17] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:17,421 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:17] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:22,136 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:22] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:22,458 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:22] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:22,777 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:22] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:23,089 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:26:23,757 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:23] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:25,999 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:25] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:28,337 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:28] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:28,651 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:28] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:26:33,666 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:33] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:33,992 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:33] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:34,299 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:34] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:34,614 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:26:35,297 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:35] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:37,439 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:37] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:39,755 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:39] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:40,061 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:40] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:26:45,079 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:45] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:45,403 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:45] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:45,721 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:45] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:46,046 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:26:46,712 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:46] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:51,728 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:51] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:52,049 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:52] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:52,362 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:52] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:52,694 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:26:53,356 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:53] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:26:55,937 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:55] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:58,261 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:58] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:58,374 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:58] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:26:58,578 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:26:58] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:00,461 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:00] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:00,777 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Recibido: "y después pasarla a...
+2025-07-26 00:27:01,449 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:01] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:03,789 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:03] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:03,898 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:03] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:04,116 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:04] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:04,214 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:04] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:04,429 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:05,063 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:05] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:07,291 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:07] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:09,535 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:09] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:09,607 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:09] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:09,860 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:09] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:09,955 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:09] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:14,872 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:14] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:15,192 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:15] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:15,275 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:15] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:15,511 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:15] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:15,825 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:16,509 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:16] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:18,738 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:18] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:20,610 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:20] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:20,920 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:20] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:21,223 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:21] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:26,241 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:26] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:26,541 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:26] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:26,572 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:26] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:26,855 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:26] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:26,882 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:26] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:27,203 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:27,891 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:27] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:29,263 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:29] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:31,859 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:31] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:32,175 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:32] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:32,911 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:32] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:37,497 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:37] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:37,813 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:37] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:38,131 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:38] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:38,233 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:38] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:38,451 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:39,087 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:39] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:41,370 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:41] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:43,557 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:43] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:43,700 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:43] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:43,870 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:43] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:43,936 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:43] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:44,014 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:44] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:44,092 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Recibido: "puedes hablar ahora...
+2025-07-26 00:27:44,732 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:44] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:46,774 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:46] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:47,087 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:47,763 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:47] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:49,262 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:49] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:49,333 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:49] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:49,576 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:49] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:27:49,649 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:49] "[31m[1mPOST /voz-a-texto HTTP/1.1[0m" 429 -
+2025-07-26 00:27:49,883 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:49] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:27:50,198 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:27:50,865 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:27:50] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:01,302 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:01] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:28:01,614 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:01] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:01,867 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Comando no...
+2025-07-26 00:28:02,549 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:02] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:28,713 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:28] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:28:35,181 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:35] "OPTIONS /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:35,496 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Recibido: "sistema activado ah...
+2025-07-26 00:28:36,128 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:36] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:38,464 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:38] "OPTIONS /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:28:38,784 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:38] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:28:39,099 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Sistema oc...
+2025-07-26 00:28:39,565 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:39] "POST /voz-a-texto HTTP/1.1" 200 -
+2025-07-26 00:28:39,782 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:39] "POST /texto-a-voz HTTP/1.1" 200 -
+2025-07-26 00:28:39,895 - texto_a_voz - WARNING - Texto filtrado para evitar loop: Perfecto, dijiste: "Eco del si...
+2025-07-26 00:28:40,560 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:28:40] "POST /texto-a-voz HTTP/1.1" 200 -

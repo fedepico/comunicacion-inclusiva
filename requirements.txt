@@ -1,0 +1,7 @@
+Flask
+Flask-CORS
+SpeechRecognition
+pyttsx3
+pyaudio
+numpy
+tensorflow

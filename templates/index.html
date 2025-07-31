@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🤝 Comunicación sin Barreras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    video {
+      width: 40%;
+      border: 4px solid white;
+    }
+
+    textarea, input {
+      width: 90%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    #formulario {
+      margin-top: 20px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>🤝 Comunicación sin Barreras</h1>
+
+  <video id="video" autoplay></video>
+
+  <p>Puedes revisar o corregir el texto dictado:</p>
+  <label for="mensajeEditable">Mensaje dictado (editable):</label><br>
+  <textarea id="mensajeEditable" rows="6" placeholder="Esperando dictado..."></textarea><br>
+
+  <button onclick="mostrarFormulario()">📨 Enviar mensaje</button>
+
+  <div id="formulario">
+    <h3>Información de contacto</h3>
+    <input type="text" id="nombre" placeholder="Nombre completo"><br>
+    <input type="text" id="telefono" placeholder="Número de contacto"><br>
+    <input type="email" id="email" placeholder="Correo electrónico"><br>
+    <button onclick="enviarFormulario()">✅ Confirmar y Enviar</button>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
