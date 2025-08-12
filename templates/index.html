@@ -2,92 +2,224 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Estación Inclusiva - Comunicación sin Barreras</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comunicación sin Barreras</title>
   <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-
-    video {
-      width: 40%;
-      border: 3px solid white;
-      margin-bottom: 20px;
-    }
-
-    textarea, input {
+    body { background-color: #111; color: #fff; font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+    video { width: 40%; border: 3px solid white; margin-bottom: 20px; }
+    #formulario { display: none; margin-top: 20px; }
+    input { width: 90%; padding: 8px; margin: 5px 0; }
+    #avisoGrabacion {
+      background: #ffcc00;
+      color: #000;
+      padding: 15px;
+      margin: 20px auto;
       width: 90%;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    #transcripcion {
+      background: #fff;
+      color: #000;
       padding: 10px;
-      margin: 10px 0;
+      margin: 20px auto;
+      width: 90%;
+      height: 120px;
+      overflow-y: auto;
+      border-radius: 5px;
+      text-align: left;
       font-size: 16px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 16px;
-      background-color: #2e8b57;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #216644;
-    }
-
-    #formulario {
-      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>🤝 Comunicación sin Barreras</h1>
-
-  <!-- 🎥 Cámara activa -->
+  <h1>Comunicación sin Barreras</h1>
+  <div id="avisoGrabacion">Esperando para iniciar...</div>
   <video id="video" autoplay></video>
-
-  <p>Presiona el botón para comenzar a grabar tu mensaje por voz. Puedes revisarlo, corregirlo y enviarlo a la alcaldía.</p>
-
-  <button onclick="iniciarGrabacion()">🎤 Comenzar Grabación</button>
-  <button onclick="detenerGrabacion()">🛑 Detener Grabación</button>
-
-  <textarea id="mensajeEditable" rows="6" placeholder="Tu mensaje aparecerá aquí..."></textarea>
+  <div id="transcripcion">Aquí aparecerá el texto transcrito...</div>
 
   <div id="formulario">
-    <h3>Información de contacto</h3>
+    <h3>Formulario</h3>
     <input type="text" id="nombre" placeholder="Nombre completo"><br>
     <input type="text" id="telefono" placeholder="Teléfono"><br>
     <input type="email" id="email" placeholder="Correo electrónico"><br>
-    <button onclick="enviarFormulario()">✅ Enviar mensaje</button>
   </div>
 
-  <script src="/static/script.js"></script>
+<script>
+let recognizer;
+let transcriptMensaje = ""; // Para el mensaje inicial
+let transcriptTemporal = ""; // Para cada campo del formulario
+let aviso = document.getElementById("avisoGrabacion");
+let transcripcion = document.getElementById("transcripcion");
+let etapaFormulario = 0; // 0=nombre, 1=telefono, 2=email, 3=enviar
 
-  <script>
-    // Activar la cámara al cargar
-    const video = document.getElementById("video");
-    navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-      .then(stream => {
-        video.srcObject = stream;
-      })
-      .catch(err => {
-        console.warn("No se pudo acceder a la cámara:", err);
+window.onload = function () {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+      document.getElementById("video").srcObject = stream;
+      reproducirMensajeBienvenida();
+    })
+    .catch(err => console.error("No se pudo activar la cámara:", err));
+};
+
+function reproducirMensajeBienvenida() {
+  const bienvenida = "Bienvenido. Esta es una estación inclusiva para personas invidentes. En unos segundos comenzará la grabación. Diga su mensaje claramente. Cuando termine, diga la palabra correo para enviarlo, o parar para detener.";
+  let utterance = new SpeechSynthesisUtterance(bienvenida);
+  utterance.lang = "es-CO";
+  utterance.onend = function () {
+    actualizarAviso("La grabación va a comenzar en unos segundos...", () => {
+      actualizarAviso("Grabando mensaje...", iniciarReconocimientoMensaje);
+    });
+  };
+  speechSynthesis.speak(utterance);
+}
+
+function actualizarAviso(texto, callback) {
+  aviso.innerText = texto;
+  let avisoVoz = new SpeechSynthesisUtterance(texto);
+  avisoVoz.lang = "es-CO";
+  avisoVoz.onend = function () {
+    if (callback) callback();
+  };
+  speechSynthesis.speak(avisoVoz);
+}
+
+function iniciarReconocimientoMensaje() {
+  iniciarReconocimiento((texto) => {
+    transcriptMensaje += " " + texto; // Solo agregar al mensaje principal
+    if (texto.toLowerCase().includes("parar")) {
+      detenerGrabacion();
+    } else if (texto.toLowerCase().includes("correo")) {
+      actualizarAviso("Enviando mensaje...", () => {
+        detenerGrabacion();
+        reproducirMensaje("El sistema entendió: " + transcriptMensaje, () => {
+          document.getElementById("formulario").style.display = "block";
+          iniciarLlenadoFormulario();
+        });
       });
+    }
+  }, true); // true indica que es para el mensaje principal
+}
 
-    // Mensaje inicial por voz
-    window.onload = () => {
-      setTimeout(() => {
-        const synth = window.speechSynthesis;
-        const bienvenida = new SpeechSynthesisUtterance("Bienvenido. Presione el botón para grabar su mensaje.");
-        bienvenida.lang = "es-CO";
-        synth.speak(bienvenida);
-      }, 1000);
-    };
-  </script>
+function iniciarLlenadoFormulario() {
+  etapaFormulario = 0;
+  actualizarAviso("Vamos a llenar el formulario. Por favor, diga su nombre completo", () => {
+    transcriptTemporal = ""; // Limpiar solo el temporal
+    iniciarReconocimiento(procesarFormularioPorVoz, false); // false indica que es para formulario
+  });
+}
+
+function procesarFormularioPorVoz(texto) {
+  if (etapaFormulario === 0) { // Nombre
+    document.getElementById("nombre").value = texto;
+    reproducirMensaje("Entendí que su nombre es: " + texto, () => {
+      etapaFormulario++;
+      transcriptTemporal = ""; // Limpiar solo para el siguiente campo
+      actualizarAviso("Ahora diga su número de teléfono", () => {
+        iniciarReconocimiento(procesarFormularioPorVoz, false);
+      });
+    });
+  } else if (etapaFormulario === 1) { // Teléfono
+    document.getElementById("telefono").value = texto;
+    reproducirMensaje("Entendí que su número de teléfono es: " + texto, () => {
+      etapaFormulario++;
+      transcriptTemporal = ""; // Limpiar solo para el siguiente campo
+      actualizarAviso("Ahora diga su correo electrónico", () => {
+        iniciarReconocimiento(procesarFormularioPorVoz, false);
+      });
+    });
+  } else if (etapaFormulario === 2) { // Email
+    let emailLimpio = texto.toLowerCase().replace(/\s+/g, "").replace(/arroba/g, "@").replace(/punto/g, ".");
+    document.getElementById("email").value = emailLimpio;
+    reproducirMensaje("Entendí que su correo electrónico es: " + emailLimpio, () => {
+      etapaFormulario++;
+      transcriptTemporal = ""; // Limpiar para el comando enviar
+      actualizarAviso("Formulario completo. Si desea enviarlo diga enviar", () => {
+        iniciarReconocimiento(procesarFormularioPorVoz, false);
+      });
+    });
+  } else if (etapaFormulario === 3) {
+    if (texto.toLowerCase().includes("enviar")) {
+      detenerGrabacion();
+      actualizarAviso("Formulario enviado correctamente");
+      reproducirMensaje("Formulario enviado correctamente");
+    }
+  }
+}
+
+function iniciarReconocimiento(callbackFinal, esMensajePrincipal = true) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    console.error("El reconocimiento de voz no es compatible con este navegador.");
+    return;
+  }
+
+  // Detener reconocimiento anterior si existe
+  if (recognizer) {
+    recognizer.stop();
+  }
+
+  recognizer = new SpeechRecognition();
+  recognizer.lang = "es-CO";
+  recognizer.interimResults = true;
+  recognizer.continuous = true;
+
+  recognizer.onresult = function (event) {
+    let interim = "";
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      let texto = event.results[i][0].transcript.trim();
+      if (event.results[i].isFinal) {
+        if (esMensajePrincipal) {
+          // Solo agregar al mensaje principal si estamos en esa fase
+          // No modificar transcriptMensaje aquí, se hace en el callback
+        } else {
+          // Para formulario, usar variable temporal
+          transcriptTemporal += " " + texto;
+        }
+        callbackFinal(texto);
+      } else {
+        interim += texto;
+      }
+    }
+    
+    // Actualizar la visualización según el contexto
+    if (esMensajePrincipal) {
+      // Solo mostrar el mensaje principal y resultados parciales
+      transcripcion.innerText = (transcriptMensaje + " " + interim).trim();
+    } else {
+      // EN FORMULARIO: NO modificar la transcripción, solo mantener el mensaje original
+      // El área de transcripción permanece con el mensaje original únicamente
+      transcripcion.innerText = transcriptMensaje.trim();
+    }
+  };
+
+  recognizer.onerror = function (event) {
+    console.error("Error en reconocimiento de voz:", event.error);
+  };
+
+  recognizer.onend = function() {
+    console.log("Reconocimiento terminado");
+    // No reiniciar automáticamente, dejar que cada función controle su flujo
+  };
+
+  recognizer.start();
+}
+
+function detenerGrabacion() {
+  if (recognizer) {
+    recognizer.stop();
+    console.log("Grabación detenida.");
+  }
+}
+
+function reproducirMensaje(texto, callback) {
+  let utterance = new SpeechSynthesisUtterance(texto);
+  utterance.lang = "es-CO";
+  utterance.onend = function () {
+    if (callback) callback();
+  };
+  speechSynthesis.speak(utterance);
+}
+</script>
 </body>
 </html>

@@ -1,7 +1,0 @@
-flask
-flask-cors
-SpeechRecognition
-pyttsx3
-requests
-pydub
-email-validator
